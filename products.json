@@ -1,18 +1,26 @@
 [
     {
-        "name": "Protein Bar",
-        "price": 5
+        "name": "Whey Protein 400g",
+        "price": 29.90
     },
     {
-        "name": "Water Bottle",
-        "price": 10
+        "name": "Creatine 300g",
+        "price": 24.90
     },
     {
-        "name": "Yoga Mat",
-        "price": 20
+        "name": "Multivitamin 120 Capsules",
+        "price": 18.90
     },
     {
-        "name": "Shaker",
-        "price": 12
+        "name": "Melatonin Tablets",
+        "price": 12.90
+    },
+    {
+        "name": "Pre-Workout Energy",
+        "price": 21.90
+    },
+    {
+        "name": "Shaker Bottle",
+        "price": 9.90
     }
 ]
