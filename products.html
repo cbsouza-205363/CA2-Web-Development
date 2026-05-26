@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <h1>FitLife Store</h1>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+    </nav>
+
+    <section class="products-container">
+
+        <div class="product">
+            <h2>Protein Bar</h2>
+
+            <p>Price: €5</p>
+
+            <button onclick="addToCart('Protein Bar',5)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product">
+            <h2>Water Bottle</h2>
+
+            <p>Price: €10</p>
+
+            <button onclick="addToCart('Water Bottle',10)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product">
+            <h2>Yoga Mat</h2>
+
+            <p>Price: €20</p>
+
+            <button onclick="addToCart('Yoga Mat',20)">
+                Add to Cart
+            </button>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
