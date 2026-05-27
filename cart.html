@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Website character encoding -->
     <meta charset="UTF-8">
+    <!-- Responsive design for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title displayed in browser tab -->
     <title>Cart</title>
-
+    <!-- External CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- Top information bar -->
 <header class="top-bar">
+    <!-- Free shipping message -->
     <p>🚚 Free shipping on orders over €50</p>
-    <p>📧 support@powerfit.com | ☎ (351) 912 345 678</p>
+    <!-- Contact information -->
+    <p>📧 support@powerfit.com | ☎ (083) 123-4567</p>
 </header>
 
+<!-- Navigation bar section -->
 <nav class="navbar">
-
+    <!-- Website logo section -->
     <div class="logo">
         <h1>PowerFit</h1>
         <span>SUPPLEMENTS</span>
     </div>
-
+    <!-- Navigation menu links -->
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -29,44 +36,46 @@
         <li><a href="cart.html">Cart</a></li>
         <li><a href="checkout.html">Checkout</a></li>
     </ul>
-
 </nav>
 
+<!-- Cart page header section -->
 <section class="page-header">
-
+    <!-- Main page title -->
     <h2>Your Shopping Cart</h2>
-
+    <!-- Short description for users -->
     <p>
         Review your selected supplements before checkout.
     </p>
-
 </section>
 
+<!-- Shopping cart content section -->
 <section class="cart-section">
-
+    <!-- Area where products added to cart will appear -->
     <div id="cart-items"></div>
-
+    <!-- Total price displayed dynamically with JavaScript -->
     <h2 id="total-price"></h2>
-
     <br>
 
+    <!-- Button to continue to checkout page -->
     <a href="checkout.html">
-        <button>Proceed to Checkout</button>
+        <button>
+            Proceed to Checkout
+        </button>
     </a>
-
 </section>
 
+<!-- External JavaScript file -->
 <script src="script.js"></script>
 
 </body>
 </html>
 
-<!--Footer section used for consistency across the website-->
-        <footer>
-            <div class="container">
-                <p>All rights reserved&copy; 2026 PowerFit Suplements.</p>
-            </div>
-        </footer>
-
-    </body>   
+<!-- Footer section used for consistency across the website -->
+<footer>
+    <div class="container">
+        <!-- Copyright information -->
+        <p>All rights reserved &copy; 2026 PowerFit Supplements.</p>
+    </div>
+</footer>
+</body>
 </html>

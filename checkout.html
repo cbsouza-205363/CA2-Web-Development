@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Website character encoding -->
     <meta charset="UTF-8">
+    <!-- Responsive design for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title displayed in browser tab -->
     <title>Checkout</title>
-
+    <!-- External CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- Top information bar -->
 <header class="top-bar">
+    <!-- Free shipping message -->
     <p>🚚 Free shipping on orders over €50</p>
-    <p>📧 support@powerfit.com | ☎ (351) 912 345 678</p>
+    <!-- Contact information -->
+    <p>📧 support@powerfit.com | ☎ (083) 123-4567</p>
 </header>
 
+<!-- Navigation bar section -->
 <nav class="navbar">
-
+    <!-- Website logo and subtitle -->
     <div class="logo">
         <h1>PowerFit</h1>
         <span>SUPPLEMENTS</span>
     </div>
 
+    <!-- Navigation menu links -->
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -29,62 +37,65 @@
         <li><a href="cart.html">Cart</a></li>
         <li><a href="checkout.html">Checkout</a></li>
     </ul>
-
 </nav>
 
+<!-- Header section for checkout page -->
 <section class="page-header">
-
+    <!-- Main page title -->
     <h2>Secure Checkout</h2>
-
+    <!-- Short page description -->
     <p>
         Complete your order information below.
     </p>
-
 </section>
 
+<!-- Checkout form section -->
 <section class="checkout-section">
-
+    <!-- Form connected to JavaScript validation -->
     <form onsubmit="placeOrder(event)">
-
+        <!-- Customer full name input -->
         <input type="text"
         id="name"
         placeholder="Full Name"
         required>
 
+        <!-- Customer email input -->
         <input type="email"
         id="email"
         placeholder="Email Address"
         required>
 
+        <!-- Delivery address input -->
         <input type="text"
         id="address"
         placeholder="Delivery Address"
         required>
 
+        <!-- Customer phone number input -->
         <input type="text"
         id="phone"
         placeholder="Phone Number"
         required>
 
+        <!-- Submit order button -->
         <button type="submit">
             Place Order
         </button>
-
     </form>
-
 </section>
 
+<!-- External JavaScript file -->
 <script src="script.js"></script>
 
 </body>
 </html>
 
-<!--Footer section used for consistency across the website-->
-        <footer>
-            <div class="container">
-                <p>All rights reserved&copy; 2026 PowerFit Suplements.</p>
-            </div>
-        </footer>
-
-    </body>   
+<!-- Footer section used for consistency across the website -->
+<footer>
+    <div class="container">
+        <!-- Copyright information -->
+        <p>All rights reserved &copy; 2026 PowerFit Supplements.</p>
+    </div>
+</footer>
+</body>
 </html>
