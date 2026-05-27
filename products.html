@@ -7,54 +7,36 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <nav>
-        <h1>FitLife Store</h1>
+<header class="top-bar">
+    <p>🚚 Free shipping on orders over €50</p>
+    <p>📧 support@powerfit.com | ☎ (351) 912 345 678</p>
+</header>
 
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="cart.html">Cart</a></li>
-            <li><a href="checkout.html">Checkout</a></li>
-        </ul>
-    </nav>
+<nav class="navbar">
+    <div class="logo">
+        <h1>PowerFit</h1>
+        <span>SUPPLEMENTS</span>
+    </div>
 
-    <section class="products-container">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+    </ul>
+</nav>
 
-        <div class="product">
-            <h2>Protein Bar</h2>
+<section class="page-header">
+    <h2>Shop Supplements</h2>
+    <p>Choose your products and boost your performance.</p>
+</section>
 
-            <p>Price: €5</p>
+<section class="products-container" id="products-container"></section>
 
-            <button onclick="addToCart('Protein Bar',5)">
-                Add to Cart
-            </button>
-        </div>
-
-        <div class="product">
-            <h2>Water Bottle</h2>
-
-            <p>Price: €10</p>
-
-            <button onclick="addToCart('Water Bottle',10)">
-                Add to Cart
-            </button>
-        </div>
-
-        <div class="product">
-            <h2>Yoga Mat</h2>
-
-            <p>Price: €20</p>
-
-            <button onclick="addToCart('Yoga Mat',20)">
-                Add to Cart
-            </button>
-        </div>
-
-    </section>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
-</html>

@@ -7,46 +7,74 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <nav>
-        <h1>FitLife Store</h1>
+<header class="top-bar">
+    <p>🚚 Free shipping on orders over €50</p>
+    <p>📧 support@powerfit.com | ☎ (351) 912 345 678</p>
+</header>
 
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="cart.html">Cart</a></li>
-            <li><a href="checkout.html">Checkout</a></li>
-        </ul>
-    </nav>
+<nav class="navbar">
 
-    <section class="checkout-section">
+    <div class="logo">
+        <h1>PowerFit</h1>
+        <span>SUPPLEMENTS</span>
+    </div>
 
-        <h2>Checkout</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+    </ul>
 
-        <form onsubmit="placeOrder(event)">
+</nav>
 
-            <input type="text"
-            placeholder="Full Name"
-            required>
+<section class="page-header">
 
-            <input type="email"
-            placeholder="Email"
-            required>
+    <h2>Secure Checkout</h2>
 
-            <input type="text"
-            placeholder="Address"
-            required>
+    <p>
+        Complete your order information below.
+    </p>
 
-            <button type="submit">
-                Place Order
-            </button>
+</section>
 
-        </form>
+<section class="checkout-section">
 
-    </section>
+    <form onsubmit="placeOrder(event)">
 
-    <script src="script.js"></script>
+        <input type="text"
+        id="name"
+        placeholder="Full Name"
+        required>
+
+        <input type="email"
+        id="email"
+        placeholder="Email Address"
+        required>
+
+        <input type="text"
+        id="address"
+        placeholder="Delivery Address"
+        required>
+
+        <input type="text"
+        id="phone"
+        placeholder="Phone Number"
+        required>
+
+        <button type="submit">
+            Place Order
+        </button>
+
+    </form>
+
+</section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
