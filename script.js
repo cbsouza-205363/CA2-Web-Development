@@ -1,34 +1,49 @@
+// Function to add a selected product to the shopping cart
 function addToCart(productName, price){
 
+    // Get existing cart from localStorage or create an empty array
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+    // Add selected product name and price to the cart array
     cart.push({
         name: productName,
         price: price
     });
 
+    // Save updated cart back to localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
+    // Show confirmation message to user
     alert(productName + " added to cart!");
 }
+
+
+// Function to display cart items on cart.html page
 function displayCart(){
 
+    // Get cart items from localStorage
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+    // Get HTML elements where cart items and total price will be displayed
     let cartItems = document.getElementById("cart-items");
-
     let totalPrice = document.getElementById("total-price");
 
+    // Check if cart section exists on the current page
     if(cartItems){
 
+        // Clear previous cart content
         cartItems.innerHTML = "";
 
+        // Create total variable
         let total = 0;
 
+        // Loop through each item in the cart
         cart.forEach((item,index)=>{
 
+            // Add item price to total
             total += item.price;
 
+            // Display each cart item with remove button
             cartItems.innerHTML += `
 
             <div class="cart-item">
@@ -46,79 +61,110 @@ function displayCart(){
             `;
         });
 
-        totalPrice.innerHTML = "Total: €" + total;
+        // Display total price
+        totalPrice.innerHTML = "Total: €" + total.toFixed(2);
     }
 }
 
+
+// Function to remove item from shopping cart
 function removeItem(index){
 
+    // Get current cart from localStorage
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+    // Remove selected item using its index
     cart.splice(index,1);
 
+    // Save updated cart back to localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
+    // Refresh cart display
     displayCart();
 }
 
+
+// Call displayCart function when cart page is opened
 displayCart();
+
+
+// Function to validate checkout form fields and place order
 function placeOrder(event){
 
+    // Prevent page from refreshing when form is submitted
     event.preventDefault();
 
-    let name = document.getElementById("name").value;
+    // Get form field values
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
 
-    let email = document.getElementById("email").value;
+    // Regular expression to allow only letters and spaces in name
+    let namePattern = /^[A-Za-zÀ-ÿ\s]+$/;
 
-    let phone = document.getElementById("phone").value;
+    // Regular expression for email validation
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Name validation
-    if(name.length < 3){
+    // Regular expression for phone number validation
+    // Phone must contain only 8 or 9 digits
+    let phonePattern = /^[0-9]{8,9}$/;
 
-        alert("Name must contain at least 3 characters.");
-
-        return;
+    // Validate name field
+    if(name.length < 3 || !namePattern.test(name)){
+        alert("Name must contain only letters and at least 3 characters.");
+        return false;
     }
 
-    // Email validation
-    if(!email.includes("@") || !email.includes(".")){
-
+    // Validate email field
+    if(!emailPattern.test(email)){
         alert("Please enter a valid email address.");
-
-        return;
+        return false;
     }
 
-    // Phone validation
-    if(phone.length < 8){
-
-        alert("Please enter a valid phone number.");
-
-        return;
+    // Validate phone field
+    if(!phonePattern.test(phone)){
+        alert("Phone number must contain only 8 or 9 numbers.");
+        return false;
     }
 
+    // Show successful order message
     alert("Order placed successfully!");
 
+    // Clear cart after successful order
     localStorage.removeItem("cart");
 
+    // Redirect user to home page
     window.location.href = "index.html";
 
+    return true;
 }
+
+
+// Function to load products dynamically from server API
 async function loadProducts(){
 
+    // Fetch product data from Express API connected to MySQL database
     let response = await fetch("/api/products");
 
+    // Convert API response into JSON format
     let products = await response.json();
 
+    // Get products container from products.html
     let container = document.getElementById("products-container");
 
+    // Check if products container exists on the current page
     if(container){
 
+        // Clear existing product content
         container.innerHTML = "";
 
+        // Loop through all products from database
         products.forEach(product => {
 
+            // Default image if no specific image is found
             let image = "images/default.png";
 
+            // Select image according to product name
             if(product.name === "Whey Protein 400g"){
                 image = "images/whey.png";
             }
@@ -143,18 +189,21 @@ async function loadProducts(){
                 image = "images/shaker.png";
             }
 
+            // Display product card dynamically on the page
             container.innerHTML += `
 
             <div class="product">
+
                 <img src="${image}" alt="${product.name}">
 
                 <h2>${product.name}</h2>
 
-                <p>€${product.price}</p>
+                <p>€${Number(product.price).toFixed(2)}</p>
 
                 <button onclick="addToCart('${product.name}', ${product.price})">
                     Add to Cart
                 </button>
+
             </div>
 
             `;
@@ -162,4 +211,6 @@ async function loadProducts(){
     }
 }
 
+
+// Call loadProducts function when products page is opened
 loadProducts();

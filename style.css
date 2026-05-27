@@ -358,3 +358,12 @@ input{
         grid-template-columns:1fr;
     }
 }
+
+/*footer keeps the site looking complete*/
+footer {
+    background-color: #050505;
+    color: white;
+    text-align: center;
+    padding: 10px 15%;
+    margin-top: 10px;
+}
